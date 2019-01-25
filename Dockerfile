@@ -1,3 +1,8 @@
+# in case of update please
+#   - change the version of Docker baseline (line 6)
+#   - change the version of gcloud SDK (line 11)
+#     https://cloud.google.com/sdk/docs/release-notes
+
 FROM docker:18.09.1
 
 COPY gcr-init.sh /usr/local/bin/gcr-init
