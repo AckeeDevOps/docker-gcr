@@ -10,7 +10,7 @@ RUN echo installing gcloud SDK ... && \
   mv google-cloud-sdk /opt/google-cloud-sdk && \
   apk add python > /dev/null 2>&1 && \
   /opt/google-cloud-sdk/install.sh -q > /dev/null 2>&1 && \
-  gcloud config set component_manager/disable_update_check true > /dev/null 2>&1 && \
+  /opt/google-cloud-sdk/bin/gcloud config set component_manager/disable_update_check true > /dev/null 2>&1 && \
   echo installing ca-certificates ... && \
   apk add ca-certificates && \
   echo setting executable attributes ... && \
