@@ -15,7 +15,7 @@ short SHA of the current commit. e.g. `53e3abc2`
 
 ```yaml
 build:production:
-  image: ackee/docker-gcr:0.0.2
+  image: ackee/docker-gcr:v0.0.2
   stage: build
   variables:
     GCLOUD_SA_KEY: ${GCLOUD_SA_KEY_FROM_PROJECT_SETTINGS}
