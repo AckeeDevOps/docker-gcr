@@ -11,4 +11,4 @@ echo $GCLOUD_SA_KEY | base64 -d > /tmp/key.json
 gcloud auth activate-service-account --key-file=/tmp/key.json
 
 echo "Initializing Docker"
-gcloud auth configure-docker
+gcloud auth configure-docker -q
