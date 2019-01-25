@@ -4,9 +4,7 @@ Docker-gcr is simple utility which allows you to push Docker images
 dirrectly to Google Container registry. Target audience is Gitlab CI 
 pipeline. 
 
-[![](https://images.microbadger.com/badges/image/ackee/docker-gcr.svg)](https://microbadger.com/images/ackee/docker-gcr "Get your own image badge on microbadger.com")
-
-[![](https://images.microbadger.com/badges/version/ackee/docker-gcr.svg)](https://microbadger.com/images/ackee/docker-gcr "Get your own version badge on microbadger.com")
+[![](https://images.microbadger.com/badges/image/ackee/docker-gcr.svg)](https://microbadger.com/images/ackee/docker-gcr "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/ackee/docker-gcr.svg)](https://microbadger.com/images/ackee/docker-gcr "Get your own version badge on microbadger.com")
 
 ## Examples
 
