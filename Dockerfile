@@ -17,7 +17,8 @@ RUN echo installing gcloud SDK ... && \
   /opt/google-cloud-sdk/install.sh -q > /dev/null 2>&1 && \
   /opt/google-cloud-sdk/bin/gcloud config set component_manager/disable_update_check true > /dev/null 2>&1 && \
   echo installing ca-certificates ... && \
-  apk add ca-certificates && \
+  apk add ca-certificates > /dev/null 2>&1 && \
+  apk add openssl > /dev/null 2>&1 && \
   echo setting executable attributes ... && \
   chmod +x /usr/local/bin/gcr-init
 
