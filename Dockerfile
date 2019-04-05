@@ -23,8 +23,10 @@ RUN echo "installing gcloud SDK ..." && \
   mv vault /usr/local/bin/vault && \
   echo "installing ca-certificates ..." && \
   apk add ca-certificates > /dev/null 2>&1 && \
+  echo "installing other tools ..." && \
   apk add openssl > /dev/null 2>&1 && \
-  echo setting executable attributes ... && \
+  apk add jq > /dev/null 2>&1 && \
+  echo "setting executable attributes ..." && \
   chmod +x /usr/local/bin/gcr-init
 
 ENV PATH="${PATH}:/opt/google-cloud-sdk/bin/"
