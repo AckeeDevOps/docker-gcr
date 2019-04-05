@@ -1,6 +1,7 @@
 # in case of update please
-#   - change the version of Docker baseline (line 6)
-#   - change the version of gcloud SDK (line 11)
+#   - change the version of Docker baseline (line 7)
+#   - change the version of gcloud SDK (line 12)
+#   - change the version of Vault client (line 21)
 #     https://cloud.google.com/sdk/docs/release-notes
 
 FROM docker:18.09.1
