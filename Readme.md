@@ -18,11 +18,10 @@ build:production:
   image: ackee/docker-gcr:v0.0.2
   stage: build
   variables:
-    GCLOUD_SA_KEY: ${GCLOUD_SA_KEY_FROM_PROJECT_SETTINGS}
-    SSH_KEY: ${SSH_KEY_FROM_PROJECT_SETTINGS}
-    IMAGE_NAME: my-cool-image
-    IMAGE_TAG: ${CI_COMMIT_SHORT_SHA}
-    GCLOUD_PROJECT_ID: my-project-123
+    BUILD_VAULT_TOKEN: aaaabbbbddffff
+    BUILD_GCLOUD_SA_VAULT_PATH: secret/data/bla/bla/bla
+    BUILD_GCLOUD_SA_VAULT_KEY: SERVICE_ACCOUNT_KEY
+    BUILD_VAULT_ADDR: https://vault.co.uk
   script:
     - gcr-init
     - docker build --build-arg SSH_KEY -t ${IMAGE_NAME}:${IMAGE_TAG} .
