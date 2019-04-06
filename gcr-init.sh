@@ -6,17 +6,14 @@
 #   BUILD_VAULT_TOKEN: Vault token in plain text
 
 # Check required variables
-[ -z "$BUILD_VAULT_TOKEN" ] && { echo "BUILD_VAULT_TOKEN is required"; exit 1; }
-[ -z "$BUILD_VAULT_ADDR" ] && { echo "BUILD_VAULT_ADDR is required"; exit 1; }
-[ -z "$BUILD_GCLOUD_SA_VAULT_PATH" ] && { echo "BUILD_GCLOUD_SA_VAULT_PATH is required"; exit 1; }
-[ -z "$BUILD_GCLOUD_SA_VAULT_KEY" ] && { echo "BUILD_GCLOUD_SA_VAULT_KEY is required"; exit 1; }
+[ -z "$VAULT_TOKEN" ] && { echo "VAULT_TOKEN is required"; exit 1; }
+[ -z "$VAULT_ADDR" ] && { echo "VAULT_ADDR is required"; exit 1; }
+[ -z "$VAULT_GCP_SA_PATH" ] && { echo "VAULT_GCP_SA_PATH is required"; exit 1; }
+[ -z "$VAULT_GCP_SA_KEY" ] && { echo "VAULT_GCP_SA_KEY is required"; exit 1; }
 
 echo "Initializing gcloud auth"
-# set Vault token for authentication
-export VAULT_ADDR="${BUILD_VAULT_ADDR}"
-export VAULT_TOKEN="${BUILD_VAULT_TOKEN}"
 # get Google SA key from Vault
-vault read -format=json -field=data "${BUILD_GCLOUD_SA_VAULT_PATH}" | jq -r ".${BUILD_GCLOUD_SA_VAULT_KEY}" > /tmp/key.json
+vault read -format=json -field=data "${VAULT_GCP_SA_PATH}" | jq -r ".${VAULT_GCP_SA_KEY}" > /tmp/key.json
 # activate service account
 gcloud auth activate-service-account --key-file=/tmp/key.json
 
